@@ -1,0 +1,136 @@
+{
+
+  /* basic screen config */
+  "themes" : [
+    {
+      "name" : "standard",
+      "theme" : "material",
+      "hue" : 60,
+      "font" : "roboto22"
+    },
+    {
+      "name" : "exotic",
+      "theme" : "alien",
+      "hue" : 90
+    }
+  ],
+
+  "theme" : "standard",
+
+
+  "styles" : [
+    {
+      "name" : "tempslider",
+      "template" : "pretty",
+      "glass" : false,
+    }
+  ],
+
+
+  "startscreen" : "main",
+
+  "screens" : [
+
+    /* the main screen */
+    {
+      "name" : "main",
+      "style" : { "color" : "#88F" },
+
+      "elements" : [
+        {
+          "type" : "button",
+          "label" : "screen2",
+          "x" : 10,
+          "y" : 10,
+          "dx" : 140,
+          "dy" :  100,
+          "onrelease" : "showscreen('screen2')"
+        },
+        {
+          "type" : "button",
+          "label" : "screen3",
+          "x" : 160,
+          "y" : 10,
+          "dx" : 140,
+          "dy" :  100,
+          "onrelease" : "showscreen('screen3')"
+        }
+      ]
+    },
+
+    {
+      "name" : "screen2",
+      "style" : { "color" : "#333" },
+
+      "elements" : [
+
+        {
+          "type" : "button",
+          "name" : "back",
+          "label" : "back",
+          "x" : 10,
+          "y" : 10,
+          "dx" : 50,
+          "dy" :  50,
+          "onrelease" : "showscreen('main')"
+        },
+
+        {
+          "type" : "button",
+          "name" : "open",
+          "label" : "open",
+          "x" : 120,
+          "dx" : 80,
+          "y"  : 10,
+          "dy" : 80,
+        },
+
+        {
+          "type" : "button",
+          "name" : "dosomething",
+          "label" : "dosomething",
+          "x" : 120,
+          "dx" : 180,
+          "y" : 10,
+          "dy" : 80,
+          "onrelease" : "dosomething('done something !')"
+        }
+      ]
+    },
+
+    {
+      "name": "screen3",
+      "style" : { "color" : "#88F" },
+
+      "elements" : [
+
+        {
+          "type" : "button",
+          "name" : "back",
+          "label" : "back",
+          "style" : { "color" : "#00F" },
+          "x" : 10,
+          "y" : 10,
+          "dx" : 50,
+          "dy" : 50,
+          "onrelease" : "showscreen('main')"
+        },
+
+        {
+          "type" : "slider",
+          "name" : "temperature",
+          "style" : "pretty",
+          "knob_style" : "pretty",
+          "indicator_style" : "tempslider",
+          "x" : 120,
+          "dx" : 20,
+          "y" : 10,
+          "dy" : 220,
+          "onevent" : "log(5,'slider got event: ' + event())"
+        }
+
+      ]
+    }
+  ]
+
+}

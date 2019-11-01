@@ -34,7 +34,6 @@ public:
 
   P44LvglSample()
   {
-    modBus.isMemberVariable();
     ui.isMemberVariable();
   }
 
@@ -43,7 +42,7 @@ public:
     const char *usageText =
     "Usage: %1$s [options]\n";
     const CmdLineOptionDescriptor options[] = {
-      { 0  , "uidefs",     true, "filepath;path for UI definition file, defaults to " UICONFIG_FILE_NAME},
+      { 'u' , "uiconfig",     true, "filepath;path for UI definition file, defaults to " UICONFIG_FILE_NAME},
       #if MOUSE_CURSOR_SUPPORT
       { 0  , "mousecursor",     false, "show mouse cursor" },
       #endif
@@ -91,7 +90,7 @@ public:
   {
     if (aFunc=="dosomething" && aArgs.size()==1) {
       // dosomething(something)
-      LOG(LOG_NOTICE, "App should DO SOMETHING: %s", aArgs[0].stringValue())
+      LOG(LOG_NOTICE, "App should DO SOMETHING: %s", aArgs[0].stringValue().c_str())
     }
     else {
       // unknown function
@@ -112,17 +111,15 @@ public:
     ui.uiScriptContext.registerFunctionHandler(boost::bind(&P44LvglSample::uiFunctionHandler, this, _1, _2, _3, _4));
     // - get config
     ErrorPtr err;
-    JsonObjectPtr uiConfig = JsonObject::objFromFile(dataPath(UICONFIG_FILE_NAME).c_str(), &err, true);
+    string cfgPath = UICONFIG_FILE_NAME;
+    getStringOption("uiconfig", cfgPath);
+    JsonObjectPtr uiConfig = JsonObject::objFromFile(dataPath(cfgPath).c_str(), &err, true);
     if (Error::isError(err, SysError::domain(), ENOENT)) {
       // try resources
-      uiConfig = JsonObject::objFromFile(resourcePath(UICONFIG_FILE_NAME).c_str(), &err, true);
+      uiConfig = JsonObject::objFromFile(resourcePath(cfgPath).c_str(), &err, true);
     }
     if (uiConfig && Error::isOK(err)) {
-      LOG(LOG_NOTICE, "JSON read: %s", uiConfig->json_c_str());
-      err = processModbusConfig(uiConfig);
-      if (Error::isOK(err)) {
-        err = ui.initForDisplay(lv_disp_get_default(), uiConfig);
-      }
+      err = ui.initForDisplay(lv_disp_get_default(), uiConfig);
     }
     if (Error::notOK(err)) {
       LOG(LOG_ERR, "Failed creating UI from config: %s", Error::text(err));
@@ -133,8 +130,7 @@ public:
 
   void fatalErrorScreen(const string aMessage)
   {
-    lv_obj_t* errorScreen = lv_img_create(NULL, NULL);
-    lv_img_set_src(errorScreen, resourcePath(FATAL_ERROR_IMG).c_str());
+    lv_obj_t* errorScreen = lv_obj_create(NULL, NULL);
     // error label
     lv_obj_t* errLabel = lv_label_create(errorScreen, NULL);
     static lv_style_t errLabelStyle;
