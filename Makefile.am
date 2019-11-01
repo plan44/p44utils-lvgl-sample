@@ -97,9 +97,7 @@ LVGL_SOURCES = \
   src/lv_drivers/display/monitor.c \
   src/lv_drivers/display/R61581.c \
   src/lv_drivers/display/SSD1963.c \
-  src/lv_drivers/display/ST7565.c \
-  src/lv_examples/lv_apps/demo/demo.c \
-  src/lv_examples/lv_apps/demo/img_bubble_pattern.c
+  src/lv_drivers/display/ST7565.c
 
 
 LVGL_FLAGS = \
