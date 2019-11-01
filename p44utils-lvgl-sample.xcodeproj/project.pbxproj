@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		ED8B1FB5236C9C9F00ED4B96 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ED8B1FB4236C9C9F00ED4B96 /* main.cpp */; };
+		ED8B1FC0236CA1A900ED4B96 /* lvglsample_main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ED8B1FBF236CA1A900ED4B96 /* lvglsample_main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +24,9 @@
 
 /* Begin PBXFileReference section */
 		ED8B1FB1236C9C9F00ED4B96 /* p44utils-lvgl-sample */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "p44utils-lvgl-sample"; sourceTree = BUILT_PRODUCTS_DIR; };
-		ED8B1FB4236C9C9F00ED4B96 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		ED8B1FBD236CA1A900ED4B96 /* lv_drv_conf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lv_drv_conf.h; sourceTree = "<group>"; };
+		ED8B1FBE236CA1A900ED4B96 /* lv_conf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lv_conf.h; sourceTree = "<group>"; };
+		ED8B1FBF236CA1A900ED4B96 /* lvglsample_main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lvglsample_main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,8 +43,8 @@
 		ED8B1FA8236C9C9F00ED4B96 = {
 			isa = PBXGroup;
 			children = (
-				ED8B1FB3236C9C9F00ED4B96 /* p44utils-lvgl-sample */,
 				ED8B1FB2236C9C9F00ED4B96 /* Products */,
+				ED8B1FBC236CA1A900ED4B96 /* src */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,12 +56,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		ED8B1FB3236C9C9F00ED4B96 /* p44utils-lvgl-sample */ = {
+		ED8B1FBC236CA1A900ED4B96 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				ED8B1FB4236C9C9F00ED4B96 /* main.cpp */,
+				ED8B1FBD236CA1A900ED4B96 /* lv_drv_conf.h */,
+				ED8B1FBE236CA1A900ED4B96 /* lv_conf.h */,
+				ED8B1FBF236CA1A900ED4B96 /* lvglsample_main.cpp */,
 			);
-			path = "p44utils-lvgl-sample";
+			path = src;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,7 +123,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED8B1FB5236C9C9F00ED4B96 /* main.cpp in Sources */,
+				ED8B1FC0236CA1A900ED4B96 /* lvglsample_main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

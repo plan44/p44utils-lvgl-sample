@@ -1,0 +1,35 @@
+*~
+
+# XCode specifics
+*.xcuserstate
+xcuserdata/
+p44utils-lvgl-sample.xcodeproj/project.xcworkspace/xcshareddata/p44maintd.xcscmblueprint
+
+# Autotools specifics
+*.o
+Makefile
+Makefile.in
+autom4te.cache/
+aclocal.m4
+config.h
+config.h.in
+config.log
+config.status
+configure
+configure_aux/
+.dirstamp
+.deps/
+stamp-h1
+p44utils-lvgl-sample
+
+# openwrt USE_SRCDIR debris specifics
+.quilt_checked
+.source_dir
+.prepared
+.built
+.built_check
+.configured_*
+.pkgdir/
+config.rpath
+ipkg-*/
+p44utils-lvgl-sample

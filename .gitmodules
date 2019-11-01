@@ -1,0 +1,12 @@
+[submodule "p44utils-lvgl-sample/src/p44utils"]
+	path = src/p44utils
+	url = ../p44utils.git
+	branch = lvgl_wip
+[submodule "p44utils-lvgl-sample/src/lvgl"]
+	path = src/lvgl
+	url = ../lvgl.git
+	branch = luz
+[submodule "p44utils-lvgl-sample/src/lv_drivers"]
+	path = src/lv_drivers
+	url = ../lv_drivers.git
+	branch = luz
