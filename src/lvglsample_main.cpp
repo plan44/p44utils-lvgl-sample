@@ -119,7 +119,8 @@ public:
       uiConfig = JsonObject::objFromFile(resourcePath(cfgPath).c_str(), &err, true);
     }
     if (uiConfig && Error::isOK(err)) {
-      err = ui.initForDisplay(lv_disp_get_default(), uiConfig);
+      ui.initForDisplay(lv_disp_get_default());
+      err = ui.setConfig(uiConfig);
     }
     if (Error::notOK(err)) {
       LOG(LOG_ERR, "Failed creating UI from config: %s", Error::text(err));

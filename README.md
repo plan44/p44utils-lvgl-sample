@@ -32,7 +32,7 @@ The standard procedure _should_ work (but it isn't tested):
     
 There is a very basic _uiconfig_sample.json_ file included in the repository. TBD: extend to show more features
 
-*(c) 2019 by Lukas Zeller / [plan44.ch](http://www.plan44.ch/automation)*
+*(c) 2019-2020 by Lukas Zeller / [plan44.ch](http://www.plan44.ch/automation)*
 
 
 

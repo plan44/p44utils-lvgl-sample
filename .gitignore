@@ -20,7 +20,10 @@ configure_aux/
 .dirstamp
 .deps/
 stamp-h1
-p44utils-lvgl-sample
+ABOUT-NLS
+ChangeLog
+NEWS
+p44lvglsample
 
 # openwrt USE_SRCDIR debris specifics
 .quilt_checked
@@ -32,4 +35,3 @@ p44utils-lvgl-sample
 .pkgdir/
 config.rpath
 ipkg-*/
-p44utils-lvgl-sample
